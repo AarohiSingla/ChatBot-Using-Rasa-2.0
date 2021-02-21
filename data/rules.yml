@@ -1,0 +1,28 @@
+version: "2.0"
+rules:
+
+- rule: Activate form
+  steps:
+  - intent: bye
+  - action: utter_bye
+
+
+- rule: register form
+  steps:
+  - intent: register
+  - action: utter_ask_registeremail
+  - action: register_form
+  - active_loop: register_form
+  
+- rule: Submit Project form
+  condition:
+  # Condition that form is active.
+  - active_loop: register_form
+  steps:
+  # Form is deactivated
+  - action: register_form
+  - active_loop: null
+  - slot_was_set:
+    - registeremail: null
+  # The actions we want to run when the form is submitted.
+  - action: action_submitregister

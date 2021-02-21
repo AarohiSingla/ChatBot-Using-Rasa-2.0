@@ -1,0 +1,36 @@
+version: "2.0"
+
+stories:
+
+- story: story 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_first_message
+
+
+- story: story 5
+  steps:
+  - intent: thanks
+  - action: utter_thanks 
+    
+- story: story 6
+  steps:
+  - intent: bye
+  - action: utter_bye
+  
+  
+- story: story 7
+  steps:
+  - intent: affirm
+  - action: utter_affirm  
+
+- story: story 9
+  steps:
+  - intent: deny
+  - action: utter_deny 
+
+- story: story 99
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot  
