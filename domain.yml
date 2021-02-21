@@ -1,0 +1,63 @@
+---
+version: "2.0"
+intents:
+ - greet
+ - thanks
+ - bye
+ - affirm
+ - deny
+ - bot_challenge
+ - register
+ 
+actions:
+ - utter_greet
+ - utter_thanks
+ - utter_bye
+ - utter_affirm
+ - utter_deny
+ - utter_iamabot
+ - validate_register_form
+ - action_submitregister
+ 
+forms:
+ register_form:
+  registeremail:
+   - type: from_text 
+   
+   
+slots:
+ registeremail:
+  type: text
+  influence_conversation: false
+
+
+     
+# entities:
+   # - projects  
+ 
+
+responses:
+ utter_greet:
+  - text: "Hi there"
+ utter_first_message:
+  - text: "How can I help you?"
+ utter_ask_registeremail:
+  - text: "Please enter your email id. We will send you the process there"
+ utter_thanks:
+  - text: "welcome"
+ utter_bye:
+  - text: "bye"
+ utter_affirm:
+  - text: " Is there anything else I can help you with?" 
+ utter_deny:
+  - text: "no"
+ utter_iamabot:
+  - text: "I am a Bot and I am happy to help you"
+ utter_details_thanks:
+  - text: "Thanks for providing the given details \nemailid is : {registeremail}"
+ utter_default:
+  - text: "ok" 
+
+session_config:
+ session_expiration_time: 60
+ carry_over_slots_to_new_session: true
